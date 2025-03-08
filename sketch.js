@@ -4,9 +4,9 @@ let oldMouseX = 0
 let oldMouseY = 0
 let curMouseX = 0
 let curMouseY = 0
-let backgroundColour = 220
+let backgroundColour = 255
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(screen.width, screen.height);
     background(backgroundColour);
     strokeWeight(20)
     fill("black")
@@ -27,7 +27,7 @@ function setup() {
     fill(backgroundColour)
   }
   function brush(){
-    fill("black")
+    fill("white")
   }
 
   function done(){
@@ -35,11 +35,11 @@ function setup() {
     round++
   }
 
-  function timer(sec){
-    if(timer == 0){
+  function countdownTimer(sec){
+    if(sec == 0){
 
     }
     else{
-      setTimeout(timer, sec * 1000)
+      setTimeout(countdownTimer, sec * 1000)
     }
   }
