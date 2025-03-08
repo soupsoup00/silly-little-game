@@ -5,8 +5,82 @@
     <title>Silly Little Game</title>
     <script src="libraries/p5.min.js"></script>
     <script src="sketch.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
-    <h1>sus</h1>
+    <div id="titleScreen" class="screen" onclick="startGame()">
+        <div class="title">Silly Little Game</div>
+        <div class="subtitle">Tap to start game</div>
+        <div class="tagline">just a silly little game of madness</div>
+    </div>
+    <div id="gameScreen" class="screen" style="display: none;">
+        <h1>Game Starts!</h1>
+    </div>
+
+    <script>
+        function startGame() {
+            document.getElementById('titleScreen').style.display = 'none';
+            document.getElementById('gameScreen').style.display = 'flex';
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silly Little Game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            background: white;
+            font-family: serif;
+            text-align: center;
+        }
+        .screen {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: gray;
+        }
+        .tagline {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            font-size: 0.9rem;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="titleScreen" class="screen" onclick="startGame()">
+        <div class="title">Silly Little Game</div>
+        <div class="subtitle">Tap to start game</div>
+        <div class="tagline">just a silly little game of madness</div>
+    </div>
+    <div id="gameScreen" class="screen" style="display: none;">
+        <h1>Game Starts!</h1>
+    </div>
+
+    
 </body>
 </html>
