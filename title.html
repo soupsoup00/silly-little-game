@@ -51,12 +51,23 @@
             font-size: 0.9rem;
             color: black;
         }
+
+        .game-image {
+            position: absolute;
+            right: 10%;
+            top: 75%;
+            transform: translateY(-110%);
+            width: 250px;
+            height: auto;
+        }
+       
     </style>
 </head>
 <body>
     <div id="titleScreen" class="screen" onclick="startGame()">
         <div class="title">Silly Little Game</div>
         <div class="subtitle">Tap to start game</div>
+        <img src="yellowpup.png" alt="Game Image" class="game-image">
         <div class="tagline">just a silly little game of madness</div>
     </div>
 
