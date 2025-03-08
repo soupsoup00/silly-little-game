@@ -3,24 +3,43 @@ html, body {
   padding: 0;
 }
 
-
 canvas {
   display: block;
 }
 
+@font-face {
+  font-family: 'Inria Serif';
+  src: url('InriaSerif-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-body {
-  margin: 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background: white;
-  font-family: serif;
+.ready{
   text-align: center;
 }
+
+.players{
+  /* align-items: center; */
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border: none;
+}
+
+
+.player-buttons{
+  font-size: 5rem;
+  font-family: Inria Serif;
+  border: none;
+  margin-top: 10%;
+  margin-right: 60px;
+  margin-left: 60px;
+}
+
+body {
+  font-family: Inria Serif;
+}
+
 .screen {
   position: absolute;
   width: 100vw;

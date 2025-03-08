@@ -7,8 +7,24 @@
     <script src="libraries/p5.min.js"></script>
     <script src="sketch.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <h1>Enter Your Name</h1>
+    <div class="ready">
+        <h1>Ready ?</h1>
+        <div class="players">
+            <p class="player-buttons" id="P1">Player 1</p>
+            <p class="player-buttons" id="P2">Player 2</p>
+        </div>
+    </div>
+    
 </body>
+
+
+<script>
+    function goDice() {
+        window.location.href = "rolldice.html"; // Redirects to game.html
+    }
+</script>
 </html>
