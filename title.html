@@ -1,15 +1,4 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silly Little Game</title>
-    <script src="libraries/p5.min.js"></script>
-    <script src="sketch.js"></script>
-    <script src="script.js"></script>
-</head>
-<body>
-
-</body>
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,5 +45,17 @@
         }
     </style>
 </head>
+<body>
+    <div id="titleScreen" class="screen" onclick="startGame()">
+        <div class="title">Silly Little Game</div>
+        <div class="subtitle">Tap to start game</div>
+        <div class="tagline">just a silly little game of madness</div>
+    </div>
 
+    <script>
+        function startGame() {
+            window.location.href = "entername.html"; // Redirects to game.html
+        }
+    </script>
+</body>
 </html>
