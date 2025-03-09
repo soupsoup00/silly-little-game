@@ -28,10 +28,10 @@ canvas {
 
 
 .player-buttons{
-  font-size: 5rem;
+  font-size: 3rem;
   font-family: Inria Serif;
   border: none;
-  margin-top: 10%;
+  margin-top: 3%;
   margin-right: 60px;
   margin-left: 60px;
 }
@@ -65,4 +65,22 @@ body {
   right: 15px;
   font-size: 0.9rem;
   color: black;
+}
+
+.game2-image {
+  /* position: absolute; */
+  display: inline-block;
+  width: 200px;
+  height: auto;
+}
+
+.game3-image {
+  /* position: absolute; */
+  display: inline-block;
+  width: 200px;
+  height: auto;
+}
+
+.header{
+  font-size: 75px;
 }
