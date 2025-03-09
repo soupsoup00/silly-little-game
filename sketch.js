@@ -6,7 +6,8 @@ let curMouseX = 0
 let curMouseY = 0
 let backgroundColour = 230
 function setup() {
-    createCanvas(screen.height, screen.height);
+  let canvas = createCanvas(screen.height*.8, screen.height*.8); // Set canvas size
+  canvas.parent("canvas-container"); // Attach to div in HTML
     background(backgroundColour);
     strokeWeight(20)
     fill("black")
