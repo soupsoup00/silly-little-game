@@ -29,6 +29,9 @@
         .goose {
             width: 150px; /* Adjust size */
             height: auto;
+            border: 5px solid white;
+            border-radius: 10px;
+            background-color: white;
         }
 
         .canvas-container {
@@ -80,6 +83,10 @@
         .textdiv{
             margin-top: 50px;
         }
+
+        .highlight {
+            border-color: yellow;
+        }
     </style>
 </head>
 
@@ -92,16 +99,16 @@
 
         <div>
             <p>Player 1</p>
-            <img src="bluepup.png" alt="Left Goose" class="goose">
+            <img src="bluepup.png" alt="Left Goose" class="goose" id="goose1">
             <p class="little-textbox-container" id="player1"> </p>
-            <div><button onclick="doneDrawing()" class="button">
+            <div><button onclick="toggle()" class="button">
                 Concede
             </button></div>
         </div>
         <div id="canvas-container"></div> <!-- p5.js Canvas goes here -->
         <div>
             <p>Player 2</p>
-            <img src="pinkpup.png" alt="Right Goose" class="goose">
+            <img src="pinkpup.png" alt="Right Goose" class="goose" id = "goose2">
             <p class="little-textbox-container" id="player2"> </p>
             <div><button onclick="doneDrawing()" class="button">
                 Done

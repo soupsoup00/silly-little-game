@@ -9,9 +9,9 @@ function setup() {
   let canvas = createCanvas(screen.height*.8, screen.height*.8); // Set canvas size
   canvas.parent("canvas-container"); // Attach to div in HTML
     background(backgroundColour);
-    strokeWeight(20)
-    fill("black")
-
+    strokeWeight(20);
+    fill("black");
+    toggleHighlight("goose1");
   }
   function draw() {
     oldMouseX = curMouseX
@@ -47,8 +47,24 @@ function setup() {
     }
   }
   function switchColour(){
-    
   }
 
+  function turntracker(player){
+    if (player = 1){
+      toggleHighlight("goose1");
+      toggleHighlight("goose2");
+    }else{
+      toggleHighlight("goose1");
+      toggleHighlight("goose2");
+    }
+  }
 
+  function toggleHighlight(myBox) {
+    const goose = document.getElementById(myBox);
+    goose.classList.toggle('highlight');
+  }
 
+  function toggle(){
+    toggleHighlight("goose2");
+    toggleHighlight("goose1");
+  }

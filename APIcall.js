@@ -116,9 +116,11 @@ async function doneDrawing(){
     if(turn>1){
         if(turn % 2 == 0){
             console.log(await compareInFight(images[turn - 2], images[turn - 1]))
+            turntracker(1);
         }
         else{
             console.log(await compareInFight(images[turn - 1], images[turn - 2]))
+            turntracker(2);
         }
     }
     resetCanvas();
