@@ -46,6 +46,9 @@ function setup() {
       setTimeout(countdownTimer, sec * 1000)
     }
   }
+  function switchColour(){
+    
+  }
 
 
 

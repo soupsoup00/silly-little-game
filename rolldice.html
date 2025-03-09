@@ -35,6 +35,37 @@
             align-items: center;
             justify-content: center;
         }
+
+        .textbox-container {
+            display: flex;
+            gap: 25x; /* Space between textboxes */
+            margin-top: 20px;
+            margin: auto;
+            width: 620px; /* Limit width */
+            height: 250px; /* Adjust height */
+            font-size: 16px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            padding: 5px;
+            overflow: scroll;
+            white-space: wrap;
+        }
+
+        .little-textbox-container {
+            display: flex;
+            gap: 25x; /* Space between textboxes */
+            margin-top: 20px;
+            margin: auto;
+            width: 100px; /* Limit width */
+            height: 250px; /* Adjust height */
+            font-size: 16px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            padding: 5px;
+            overflow: scroll;
+            white-space: wrap;
+        }
+
     </style>
 </head>
 
@@ -44,16 +75,27 @@
 
     <!-- Flexbox to align items in a row -->
     <div class="row-container">
+
         <div>
             <p>Player 1</p>
         <img src="bluepup.png" alt="Left Goose" class="goose">
-        </div>
+        <p class="little-textbox-container" id="player1"> shan kickson is the hottest single in your area right now but kai hikichi"hane" is npw also another hot contender in your area oh no i wonder when they will complete and find out who is the ultimate hot single in your area!!???</p>
+    </div>
         <div id="canvas-container"></div> <!-- p5.js Canvas goes here -->
         <div>
             <p>Player 2</p>
         <img src="pinkpup.png" alt="Right Goose" class="goose">
-        </div>
+        <p class="little-textbox-container" id="player2"> shan kickson is the hottest single in your area right now but kai hikichi"hane" is npw also another hot contender in your area oh no i wonder when they will complete and find out who is the ultimate hot single in your area!!???</p>
+    </div>
+    
     </div>
 
+    <div><button onclick="doneDrawing()">
+        Done
+    </button></div>
+
+    <div class="textbox-container">
+        <p class="textbox-container" id="big paragraph"> shan kickson is the hottest single in your area right now but kai hikichi"hane" is npw also another hot contender in your area oh no i wonder when they will complete and find out who is the ultimate hot single in your area!!???</p>
+    </div>
 </body>
 </html>
