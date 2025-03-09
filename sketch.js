@@ -1,6 +1,5 @@
-
 let timer = 30
-let round = 0
+let round = 0;
 let oldMouseX = 0
 let oldMouseY = 0
 let curMouseX = 0
@@ -31,10 +30,10 @@ function setup() {
     fill("white")
   }
 
-  function done(){
-    saveCanvas("image" + round + ".png")
-    silly.
-    round++
+  function canvasTo64(){
+    let base64canvas = canvas.toDataURL()
+    console.log(base64canvas)
+    return base64canvas
   }
 
   function countdownTimer(sec){

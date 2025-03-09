@@ -1,5 +1,5 @@
 let images = []
-let round = 0
+let turn = 0
 
 function getBase64FromPath(imagePath, callback) {
     fetch(imagePath)
@@ -15,16 +15,9 @@ function getBase64FromPath(imagePath, callback) {
         })
         .catch(error => console.error('Error loading image:', error));
 }
-let base64_img
-// Example usage
-getBase64FromPath('yellowpup.png', async function (base64) {
-    base64_img = base64
-    base64_img = await resizeAndCompressBase64("data:image/jpeg;base64,"+base64_img)
-    console.log(base64_img)
-    askOpenAI(base64_img)
-});
+const apiKey = ""; 
   async function askOpenAI(base64Image) {
-    const apiKey = ""; // Never expose this in frontend!
+    
     
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
@@ -37,7 +30,7 @@ getBase64FromPath('yellowpup.png', async function (base64) {
             max_tokens: 500,
             messages: [
                 { "role": "user", "content": [
-                    { "type": "text", "text": "What is in this image?" },
+                    { "type": "text", "text": "What is in this image? The image will always be drawn in black and white so ignore this aspect while evaluating the image. Only give one option of what the image is. Only respond with what the image is." },
                     { "type": "image_url", "image_url": { "url": base64Image } }
                 ]}
             ]
@@ -46,8 +39,41 @@ getBase64FromPath('yellowpup.png', async function (base64) {
 
     const data = await response.json();
     console.log(data);
-    images[round] = data.choices[0].message.content
-    console.log(images[round])
+    images[turn] = data.choices[0].message.content
+    console.log(images[turn])
+}
+
+async function compareInFight(entity1, entity2) {
+    const prompt = `Compare how ${entity1} and ${entity2} would match up in a fight. Ignore the style of the image and focus on what the object is and do not acknowledge the style of drawing in the response. These entities may or may not be inanimate or unable to fight, be creative to guess how they would fight if they could. Who would win and why? Always end your response with "So the winner is player [NUMBER OF WINNING INPUT HERE]`;
+
+    try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${apiKey}`
+            },
+            body: JSON.stringify({
+                model: "gpt-4o-mini", // Use "gpt-3.5-turbo" if GPT-4 is not available
+                messages: [
+                    { role: "system", content: "You are a creative assistant who compares two entities in a hypothetical fight. You always choose a winner." },
+                    { role: "user", content: prompt }
+                ],
+                max_tokens: 300 // Adjust based on how long you want the response to be
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`API request failed with status ${response.status}`);
+        }
+
+        const data = await response.json();
+        const result = data.choices[0].message.content;
+        return result;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return null;
+    }
 }
 
 async function resizeAndCompressBase64(base64Str) {
@@ -70,4 +96,22 @@ async function resizeAndCompressBase64(base64Str) {
         };
         img.onerror = reject;
     });
+}
+
+
+async function doneDrawing(){
+    let canvas64 = await canvasTo64()
+    let base64_img = await resizeAndCompressBase64(canvas64)
+    console.log(base64_img)
+    await askOpenAI(base64_img)
+    turn++;
+    if(turn>1){
+        if(turn % 2 == 0){
+            console.log(await compareInFight(images[turn - 2], images[turn - 1]))
+        }
+        else{
+            console.log(await compareInFight(images[turn - 1], images[turn - 2]))
+        }
+    }
+    resetCanvas();
 }
