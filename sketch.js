@@ -5,9 +5,9 @@ let oldMouseX = 0
 let oldMouseY = 0
 let curMouseX = 0
 let curMouseY = 0
-let backgroundColour = 255
+let backgroundColour = 230
 function setup() {
-    createCanvas(screen.width, screen.height);
+    createCanvas(screen.height, screen.height);
     background(backgroundColour);
     strokeWeight(20)
     fill("black")
@@ -33,6 +33,7 @@ function setup() {
 
   function done(){
     saveCanvas("image" + round + ".png")
+    silly.
     round++
   }
 
