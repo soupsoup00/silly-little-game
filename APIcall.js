@@ -51,7 +51,7 @@ const apiKey = "";
 }
 
 async function compareInFight(entity1, entity2) {
-    const prompt = `Compare how ${entity1} and ${entity2} would match up in a fight. Ignore the style of the image and focus on what the object is and do not acknowledge the style of drawing in the response. These entities may or may not be inanimate or unable to fight, be creative to guess how they would fight if they could. Who would win and why? Always end your response with "So the winner is player [NUMBER OF WINNING INPUT HERE]`;
+    const prompt = `Compare how ${entity1} and ${entity2} would match up in a fight. Ignore the style of the image and focus on what the object is and do not acknowledge the style of drawing in the response. These entities may or may not be inanimate or unable to fight, be creative to guess how they would fight if they could. Who would win and why? Keep it to 1 paragraph maximum. Always end your response with "So the winner is player [NUMBER OF WINNING INPUT HERE]`;
 
     try {
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
