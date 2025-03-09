@@ -39,7 +39,14 @@ const apiKey = "";
 
     const data = await response.json();
     console.log(data);
+    
     images[turn] = data.choices[0].message.content
+    if(turn % 2 == 0){
+        document.getElementById("player1").innerHTML = images[turn]
+    }
+    else{
+        document.getElementById("player2").innerHTML = images[turn]
+    }
     console.log(images[turn])
 }
 
@@ -69,6 +76,7 @@ async function compareInFight(entity1, entity2) {
 
         const data = await response.json();
         const result = data.choices[0].message.content;
+        document.getElementById("big paragraph").innerHTML = result
         return result;
     } catch (error) {
         console.error("Error fetching data:", error);
