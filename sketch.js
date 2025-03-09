@@ -11,6 +11,7 @@ function setup() {
     background(backgroundColour);
     strokeWeight(20)
     fill("black")
+
   }
   function draw() {
     oldMouseX = curMouseX
