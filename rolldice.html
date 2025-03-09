@@ -7,9 +7,53 @@
     <script src="sketch.js"></script>
     <script src="libraries/p5.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Flex container to align geese & sketch area in a row */
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* Space between items */
+            margin-top: 20px;
+            align-items: center;
+            text-align:center;
+            margin: auto;
+            justify-content: center;
+        }
+
+        .goose {
+            width: 150px; /* Adjust size */
+            height: auto;
+        }
+
+        .canvas-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
+
 <body>
-    <h1 class="ready">Ready</h1>
+
+    <h1>Ready</h1>
+
+    <!-- Flexbox to align items in a row -->
+    <div class="row-container">
+        <div>
+            <p>Player 1</p>
+        <img src="bluepup.png" alt="Left Goose" class="goose">
+        </div>
+        <div id="canvas-container"></div> <!-- p5.js Canvas goes here -->
+        <div>
+            <p>Player 2</p>
+        <img src="pinkpup.png" alt="Right Goose" class="goose">
+        </div>
+    </div>
+
 </body>
 </html>
