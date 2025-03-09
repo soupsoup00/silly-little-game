@@ -101,7 +101,7 @@
             <p>Player 1</p>
             <img src="bluepup.png" alt="Left Goose" class="goose" id="goose1">
             <p class="little-textbox-container" id="player1"> </p>
-            <div><button onclick="toggle()" class="button">
+            <div><button onclick="goend()" class="button">
                 Concede
             </button></div>
         </div>
@@ -120,5 +120,10 @@
     <div class ="textdiv">
         <p class="textbox-container" id="big paragraph"> </p>
     </div>
+    <script>
+        function goend() {
+            window.location.href = "end.html"; 
+        }
+    </script>
 </body>
 </html>
