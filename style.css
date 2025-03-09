@@ -37,6 +37,17 @@ canvas {
   margin-bottom: 7%;
 }
 
+#p1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+#p2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+
 body {
   font-family: Inria Serif;
 }
