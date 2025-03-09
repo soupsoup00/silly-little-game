@@ -76,7 +76,13 @@ async function compareInFight(entity1, entity2) {
 
         const data = await response.json();
         const result = data.choices[0].message.content;
-        document.getElementById("big paragraph").innerHTML = result
+        document.getElementById("big paragraph").innerHTML = result;
+
+        //To count wins for each player
+        const last2 = result.charAt(result.length - 2);
+        // console.log(last2);
+        incrementNumber(last2);
+
         return result;
     } catch (error) {
         console.error("Error fetching data:", error);

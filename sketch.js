@@ -68,3 +68,27 @@ function setup() {
     toggleHighlight("goose2");
     toggleHighlight("goose1");
   }
+
+  function incrementNumber(last) {
+    if(last == 1){
+      // Get the current number from the paragraph
+      let numberElement = document.getElementById('number1');
+      let currentNumber = parseInt(numberElement.textContent);
+
+      // Increment the number by one
+      currentNumber += 1;
+
+      // Update the paragraph with the new number
+      numberElement.textContent = currentNumber;
+    }else{
+      // Get the current number from the paragraph
+      let numberElement = document.getElementById('number2');
+      let currentNumber = parseInt(numberElement.textContent);
+
+      // Increment the number by one
+      currentNumber += 1;
+
+      // Update the paragraph with the new number
+      numberElement.textContent = currentNumber;
+    }
+  }
